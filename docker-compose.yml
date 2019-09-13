@@ -244,14 +244,3 @@ services:
     depends_on:
       - redis
 
-  ngrok:
-    image: wernight/ngrok:latest
-    networks:
-      - backend
-    links:
-      - nginx
-    environment:
-      - NGROK_AUTH=${NGROK_AUTH}
-      - NGROK_PORT=nginx:80
-    ports:
-      - "4040:4040"
